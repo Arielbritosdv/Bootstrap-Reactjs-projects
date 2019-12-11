@@ -2,8 +2,7 @@ import React , { Component } from 'react';
 import './App.css';
 import coffe from './img/coffe.png';
 import bgchicara from './img/chicara-coffe.png';
-import cafehq from './img/cafe-hq.png';
-import cafehqop from './img/cafe-hq-op.png';
+import lax from 'lax.js'
 
 
 
@@ -44,8 +43,18 @@ export default class App extends Component {
 
   
 
-  {/* SCROLL TO */}
+  {/* lax animation */}
 
+  window.onload = function() {
+    lax.setup() // init
+  
+    const updateLax = () => {
+      lax.update(window.scrollY)
+      window.requestAnimationFrame(updateLax)
+    }
+  
+    window.requestAnimationFrame(updateLax)
+  }
   
 
     return (
@@ -92,11 +101,12 @@ export default class App extends Component {
        </section>
 
       {/* nth-of-type(2) */}
-      <section className="section-parallax d-flex justify-content-center flex-row">
-        <div className="top-section container-md text-center d-flex pt-4 justify-content-center flex-column">
+      <section className="section-parallax d-flex justify-content-between flex-row col">
+        <div className="top-section text-center d-flex pt-4
+         justify-content-center col flex-column lax" data-lax-preset="fadeIn driftRight 50">
           <img src={bgchicara} className="mx-auto d-block bg-chicara" />
-          <h2>Bem Vindo</h2>
-          <p>“Se você é apaixonado por café e tem interesse em saber mais sobre o grão, este é o seu lugar.
+          <h2 className="lax text-white" data-lax-preset="zoomIn fadeIn">Bem Vindo</h2>
+          <p className="lax text-white" data-lax-preset="zoomIn fadeIn">“Se você é apaixonado por café e tem interesse em saber mais sobre o grão, este é o seu lugar.
              História da bebida, dicas de preparo, curiosidades e muito mais…”</p>
         
            
@@ -104,8 +114,49 @@ export default class App extends Component {
         
         </div>
         
-        <div className="right-section row container flex-row d-flex justify-content-center">
-            
+        <div className="right-section flex-row d-flex justify-content-between col">
+
+          <div className="row">
+          <div className="col-sm-6 lax shadow p-3 rounded" data-lax-preset="fadeIn driftLeft 50">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Special title treatment</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6 lax shadow p-3 rounded" data-lax-preset="fadeIn driftLeft 50">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Special title treatment</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6 lax shadow p-3 rounded" data-lax-preset="fadeIn driftRight 50">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Special title treatment</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6 lax shadow p-3 rounded" data-lax-preset="fadeIn driftRight 50">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Special title treatment</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>  
+
+
+          
         </div>
       </section>
     

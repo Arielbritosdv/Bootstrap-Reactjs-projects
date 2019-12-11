@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'CaviarDream';
+  src: local('CaviarDream'), url('./fonts/CaviarDreams.ttf') format('truetype');
+
+  font-family: 'Roboto';
+  src:local('Roboto'), url('./fonts/Roboto-Regular.ttf') format('truetype');
+}
+
 
 * {
   box-sizing: border-box;
@@ -26,7 +34,8 @@ font-family: 'Roboto', sans-serif;
     font-family: 'Alatsi', sans-serif;
 
     font-family: 'Anton', sans-serif;
-
+    
+    font-family: 'Solway', serif;
 
  */
 
@@ -127,8 +136,9 @@ min-height: 100%;
   position: absolute;
   height: 100vh;
   width: 100%;
-  background-color:white ;
   background-size:cover ;
+  /* background-image: linear-gradient(#FF416C,#FF4B2B); */
+  background-image: linear-gradient(to right,#8A2387,#E94057,#F27121);
   
 
 }
@@ -193,31 +203,32 @@ button {
   margin: 1em 0 0 0;
   font-size: 2em;
   color: black;
-  font-family: 'Alatsi', sans-serif;
+  font-family: CaviarDream;
   align-items: center;
   text-align: center;
 }
-
+h5 {
+  color: black;
+  font-family: CaviarDream;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
 .top-section {
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background-color: white;
-
+  width: auto;
+  height: 80vh;
+  display: flex;
+}
+.top-section p {
+  font-family: Roboto
+  
 }
 .right-section {
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  padding-top: 20px;
-  background-image: url('./img/cafe-bg2.png');
-  background-size: cover;
-  background-attachment: scroll;
-  background-color: white;
-  border-left: #000000 1px dotted;
+  width: auto;
+  height: 80vh;
 
 }
